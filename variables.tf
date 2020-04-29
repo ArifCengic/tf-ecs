@@ -25,8 +25,7 @@ variable "vpc_public_subnets" {
   description = "Subnets where EC2 instances are deployed"
 }
 
-variable "iam_instance_profile" {
-    default = "arn:aws:iam::064777359940:instance-profile/ECS-APP-Role"  
+variable "iam_instance_profile" { 
     description = "IAM instance profile ECS app role"
 }
 
