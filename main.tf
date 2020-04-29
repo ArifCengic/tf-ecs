@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "test-ecs-launch-configuration" {
     instance_type = var.instance_type 
     security_groups = [var.security_group_id]
     #iam_instance_profile = aws_iam_instance_profile.ecs-instance-profile.id
-    iam_instance_profile = "arn:aws:iam::064777359940:instance-profile/ECS-APP-Role" #hardcoded 
+    iam_instance_profile = var.iam_instance_profile 
     root_block_device {
         volume_type = "standard"
         volume_size = 100
@@ -50,4 +50,3 @@ resource "aws_autoscaling_group" "test-ecs-autoscaling-group" {
 resource "aws_ecs_cluster" "test-ecs-cluster" {
     name = var.ecs_cluster_name
 }
-#----------------------- ECS -------------------------
